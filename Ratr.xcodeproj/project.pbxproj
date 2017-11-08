@@ -1,0 +1,528 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1EC111801FB33B04007BDA28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC1117F1FB33B04007BDA28 /* AppDelegate.swift */; };
+		1EC111821FB33B04007BDA28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC111811FB33B04007BDA28 /* ViewController.swift */; };
+		1EC111851FB33B04007BDA28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EC111831FB33B04007BDA28 /* Main.storyboard */; };
+		1EC111871FB33B04007BDA28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EC111861FB33B04007BDA28 /* Assets.xcassets */; };
+		1EC1118A1FB33B04007BDA28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EC111881FB33B04007BDA28 /* LaunchScreen.storyboard */; };
+		1EC111951FB33B04007BDA28 /* RatrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC111941FB33B04007BDA28 /* RatrTests.swift */; };
+		1EC111A01FB33B05007BDA28 /* RatrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC1119F1FB33B05007BDA28 /* RatrUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1EC111911FB33B04007BDA28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1EC111741FB33B04007BDA28 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EC1117B1FB33B04007BDA28;
+			remoteInfo = Ratr;
+		};
+		1EC1119C1FB33B05007BDA28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1EC111741FB33B04007BDA28 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EC1117B1FB33B04007BDA28;
+			remoteInfo = Ratr;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1EC1117C1FB33B04007BDA28 /* Ratr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ratr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EC1117F1FB33B04007BDA28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1EC111811FB33B04007BDA28 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1EC111841FB33B04007BDA28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1EC111861FB33B04007BDA28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1EC111891FB33B04007BDA28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1EC1118B1FB33B04007BDA28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EC111901FB33B04007BDA28 /* RatrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RatrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EC111941FB33B04007BDA28 /* RatrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatrTests.swift; sourceTree = "<group>"; };
+		1EC111961FB33B04007BDA28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EC1119B1FB33B05007BDA28 /* RatrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RatrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EC1119F1FB33B05007BDA28 /* RatrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatrUITests.swift; sourceTree = "<group>"; };
+		1EC111A11FB33B05007BDA28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1EC111791FB33B04007BDA28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EC1118D1FB33B04007BDA28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EC111981FB33B05007BDA28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1EC111731FB33B04007BDA28 = {
+			isa = PBXGroup;
+			children = (
+				1EC1117E1FB33B04007BDA28 /* Ratr */,
+				1EC111931FB33B04007BDA28 /* RatrTests */,
+				1EC1119E1FB33B05007BDA28 /* RatrUITests */,
+				1EC1117D1FB33B04007BDA28 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1EC1117D1FB33B04007BDA28 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1EC1117C1FB33B04007BDA28 /* Ratr.app */,
+				1EC111901FB33B04007BDA28 /* RatrTests.xctest */,
+				1EC1119B1FB33B05007BDA28 /* RatrUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1EC1117E1FB33B04007BDA28 /* Ratr */ = {
+			isa = PBXGroup;
+			children = (
+				1EC1117F1FB33B04007BDA28 /* AppDelegate.swift */,
+				1EC111811FB33B04007BDA28 /* ViewController.swift */,
+				1EC111831FB33B04007BDA28 /* Main.storyboard */,
+				1EC111861FB33B04007BDA28 /* Assets.xcassets */,
+				1EC111881FB33B04007BDA28 /* LaunchScreen.storyboard */,
+				1EC1118B1FB33B04007BDA28 /* Info.plist */,
+			);
+			path = Ratr;
+			sourceTree = "<group>";
+		};
+		1EC111931FB33B04007BDA28 /* RatrTests */ = {
+			isa = PBXGroup;
+			children = (
+				1EC111941FB33B04007BDA28 /* RatrTests.swift */,
+				1EC111961FB33B04007BDA28 /* Info.plist */,
+			);
+			path = RatrTests;
+			sourceTree = "<group>";
+		};
+		1EC1119E1FB33B05007BDA28 /* RatrUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1EC1119F1FB33B05007BDA28 /* RatrUITests.swift */,
+				1EC111A11FB33B05007BDA28 /* Info.plist */,
+			);
+			path = RatrUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1EC1117B1FB33B04007BDA28 /* Ratr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1EC111A41FB33B05007BDA28 /* Build configuration list for PBXNativeTarget "Ratr" */;
+			buildPhases = (
+				1EC111781FB33B04007BDA28 /* Sources */,
+				1EC111791FB33B04007BDA28 /* Frameworks */,
+				1EC1117A1FB33B04007BDA28 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ratr;
+			productName = Ratr;
+			productReference = 1EC1117C1FB33B04007BDA28 /* Ratr.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1EC1118F1FB33B04007BDA28 /* RatrTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1EC111A71FB33B05007BDA28 /* Build configuration list for PBXNativeTarget "RatrTests" */;
+			buildPhases = (
+				1EC1118C1FB33B04007BDA28 /* Sources */,
+				1EC1118D1FB33B04007BDA28 /* Frameworks */,
+				1EC1118E1FB33B04007BDA28 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1EC111921FB33B04007BDA28 /* PBXTargetDependency */,
+			);
+			name = RatrTests;
+			productName = RatrTests;
+			productReference = 1EC111901FB33B04007BDA28 /* RatrTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1EC1119A1FB33B05007BDA28 /* RatrUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1EC111AA1FB33B05007BDA28 /* Build configuration list for PBXNativeTarget "RatrUITests" */;
+			buildPhases = (
+				1EC111971FB33B05007BDA28 /* Sources */,
+				1EC111981FB33B05007BDA28 /* Frameworks */,
+				1EC111991FB33B05007BDA28 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1EC1119D1FB33B05007BDA28 /* PBXTargetDependency */,
+			);
+			name = RatrUITests;
+			productName = RatrUITests;
+			productReference = 1EC1119B1FB33B05007BDA28 /* RatrUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1EC111741FB33B04007BDA28 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Soundcloud;
+				TargetAttributes = {
+					1EC1117B1FB33B04007BDA28 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					1EC1118F1FB33B04007BDA28 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1EC1117B1FB33B04007BDA28;
+					};
+					1EC1119A1FB33B05007BDA28 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1EC1117B1FB33B04007BDA28;
+					};
+				};
+			};
+			buildConfigurationList = 1EC111771FB33B04007BDA28 /* Build configuration list for PBXProject "Ratr" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1EC111731FB33B04007BDA28;
+			productRefGroup = 1EC1117D1FB33B04007BDA28 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1EC1117B1FB33B04007BDA28 /* Ratr */,
+				1EC1118F1FB33B04007BDA28 /* RatrTests */,
+				1EC1119A1FB33B05007BDA28 /* RatrUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1EC1117A1FB33B04007BDA28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EC1118A1FB33B04007BDA28 /* LaunchScreen.storyboard in Resources */,
+				1EC111871FB33B04007BDA28 /* Assets.xcassets in Resources */,
+				1EC111851FB33B04007BDA28 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EC1118E1FB33B04007BDA28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EC111991FB33B05007BDA28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1EC111781FB33B04007BDA28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EC111821FB33B04007BDA28 /* ViewController.swift in Sources */,
+				1EC111801FB33B04007BDA28 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EC1118C1FB33B04007BDA28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EC111951FB33B04007BDA28 /* RatrTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EC111971FB33B05007BDA28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EC111A01FB33B05007BDA28 /* RatrUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1EC111921FB33B04007BDA28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1EC1117B1FB33B04007BDA28 /* Ratr */;
+			targetProxy = 1EC111911FB33B04007BDA28 /* PBXContainerItemProxy */;
+		};
+		1EC1119D1FB33B05007BDA28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1EC1117B1FB33B04007BDA28 /* Ratr */;
+			targetProxy = 1EC1119C1FB33B05007BDA28 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1EC111831FB33B04007BDA28 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1EC111841FB33B04007BDA28 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1EC111881FB33B04007BDA28 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1EC111891FB33B04007BDA28 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1EC111A21FB33B05007BDA28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1EC111A31FB33B05007BDA28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1EC111A51FB33B05007BDA28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Ratr/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.soundcloud.Ratr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		1EC111A61FB33B05007BDA28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Ratr/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.soundcloud.Ratr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		1EC111A81FB33B05007BDA28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RatrTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.soundcloud.RatrTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ratr.app/Ratr";
+			};
+			name = Debug;
+		};
+		1EC111A91FB33B05007BDA28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RatrTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.soundcloud.RatrTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ratr.app/Ratr";
+			};
+			name = Release;
+		};
+		1EC111AB1FB33B05007BDA28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = RatrUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.soundcloud.RatrUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Ratr;
+			};
+			name = Debug;
+		};
+		1EC111AC1FB33B05007BDA28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = RatrUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.soundcloud.RatrUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Ratr;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1EC111771FB33B04007BDA28 /* Build configuration list for PBXProject "Ratr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EC111A21FB33B05007BDA28 /* Debug */,
+				1EC111A31FB33B05007BDA28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1EC111A41FB33B05007BDA28 /* Build configuration list for PBXNativeTarget "Ratr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EC111A51FB33B05007BDA28 /* Debug */,
+				1EC111A61FB33B05007BDA28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1EC111A71FB33B05007BDA28 /* Build configuration list for PBXNativeTarget "RatrTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EC111A81FB33B05007BDA28 /* Debug */,
+				1EC111A91FB33B05007BDA28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1EC111AA1FB33B05007BDA28 /* Build configuration list for PBXNativeTarget "RatrUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EC111AB1FB33B05007BDA28 /* Debug */,
+				1EC111AC1FB33B05007BDA28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1EC111741FB33B04007BDA28 /* Project object */;
+}
