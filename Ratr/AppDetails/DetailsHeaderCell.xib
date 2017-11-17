@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="redraw" id="iN0-l3-epB" customClass="DetailsHeaderCell" customModule="Ratr" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="399" height="342"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view userInteractionEnabled="NO" contentMode="redraw" semanticContentAttribute="forceLeftToRight" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BEd-Lw-WEP" customClass="AARatingBar" customModule="AARatingBar">
+                    <rect key="frame" x="149" y="244" width="100" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <accessibility key="accessibilityConfiguration">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="sK4-sf-CqZ"/>
+                        <constraint firstAttribute="width" constant="100" id="tLX-tj-pqJ"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="color">
+                            <color key="value" red="1" green="0.46666666670000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hJN-be-GQB">
+                    <rect key="frame" x="124" y="30" width="150" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="dcO-He-fsL"/>
+                        <constraint firstAttribute="width" constant="150" id="oNx-lY-NFa"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="first label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="W24-kC-wt4">
+                    <rect key="frame" x="30" y="200" width="339.5" height="24"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="hJN-be-GQB" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="4I2-jm-Lzn"/>
+                <constraint firstItem="BEd-Lw-WEP" firstAttribute="top" secondItem="W24-kC-wt4" secondAttribute="bottom" constant="20" id="BDQ-Cg-HVl"/>
+                <constraint firstItem="hJN-be-GQB" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="Krp-Vh-fLb"/>
+                <constraint firstItem="W24-kC-wt4" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="Rx7-RT-Wo0"/>
+                <constraint firstItem="BEd-Lw-WEP" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="TM2-mF-Mf5"/>
+                <constraint firstItem="W24-kC-wt4" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="afQ-r6-SSV"/>
+                <constraint firstItem="W24-kC-wt4" firstAttribute="top" secondItem="hJN-be-GQB" secondAttribute="bottom" constant="20" id="wEg-LT-bxa"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="iconView" destination="hJN-be-GQB" id="uVx-hL-QWv"/>
+                <outlet property="label" destination="W24-kC-wt4" id="Dsn-zs-lYX"/>
+                <outlet property="ratingBar" destination="BEd-Lw-WEP" id="15S-Rg-6Fa"/>
+            </connections>
+            <point key="canvasLocation" x="56.5" y="-98"/>
+        </view>
+    </objects>
+</document>
