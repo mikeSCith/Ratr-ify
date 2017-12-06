@@ -1,9 +1,13 @@
-//
-//  MockNavigationController.swift
-//  RatrTests
-//
-//  Created by Michael Smith on 21.11.17.
-//  Copyright © 2017 Soundcloud. All rights reserved.
-//
-
 import Foundation
+import UIKit
+
+class MockNavigationController: UINavigationController {
+    
+    var pushViewControllerCount: UInt = 0
+    var pushedViewController: UIViewController?
+    
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        pushViewControllerCount += 1
+        pushedViewController = viewController
+    }
+}

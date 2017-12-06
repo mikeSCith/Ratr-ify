@@ -1,9 +1,17 @@
-//
-//  RatingClientMock.swift
-//  RatrTests
-//
-//  Created by Michael Smith on 21.11.17.
-//  Copyright © 2017 Soundcloud. All rights reserved.
-//
-
 import Foundation
+@testable import Ratr
+
+class RatingClientMock: RatingClientProtocol {
+    func getRating(for id: String, on completion: @escaping ((Rating?, Error?) -> Void)) {
+        self.getRatingCalledWith = id
+        completion(TestFixtures.rating, nil)
+    }
+    
+    func getReview(for id: String, on completion: @escaping (([Review]?, Error?) -> Void)) {
+        self.getReviewCalledWith = id
+        completion([TestFixtures.review], nil)
+    }
+    
+    var getRatingCalledWith: String?
+    var getReviewCalledWith: String?
+}
