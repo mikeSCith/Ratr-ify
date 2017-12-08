@@ -8,4 +8,5 @@ protocol HomeDataSourceProtocol {
     func loadData()
     func rating(for index: Int) -> Rating
     func contentDidChange()
+    func deleteRating(at index: Int) -> Void
 }

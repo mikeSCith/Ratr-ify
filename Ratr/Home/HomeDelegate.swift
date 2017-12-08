@@ -3,17 +3,19 @@
 import Foundation
 import UIKit
 
-class HomeControllerDelegate: NSObject, UITableViewDelegate {
+class HomeDelegate: NSObject, UITableViewDelegate {
     
-    var nc: UINavigationController
-    var ratingClient: RatingClient
-    var dataSource: HomeControllerDataSource
-    
-    init(nc: UINavigationController, dataSource: HomeControllerDataSource, client: RatingClient = RatingClient(), tableView: UITableView){
+    var ratingClient: RatingClientProtocol
+    var dataSource: HomeDataSourceProtocol
+    var sc: UISplitViewController
+        
+    init(dataSource: HomeDataSourceProtocol, client: RatingClientProtocol = RatingClient(), tableView: UITableView, sc: UISplitViewController){
+        
         self.ratingClient = client
         self.dataSource = dataSource
-        self.nc = nc
+        self.sc = sc
         super.init()
+        
         tableView.delegate = self
     }
     
@@ -22,9 +24,24 @@ class HomeControllerDelegate: NSObject, UITableViewDelegate {
         
         let rating = dataSource.rating(for: indexPath.row)
         
-        ratingClient.getReview(for: rating.id) { (reviews) in
+        ratingClient.getReview(for: rating.id) { (reviews, error) in
             let vc = RatingTabController.newController(for: rating, reviews: reviews!)
-            self.nc.pushViewController(vc, animated: true)
+            if self.sc.viewControllers.count > 1 {
+                let x = self.sc.viewControllers[1] as! UINavigationController
+                x.pushViewController(vc, animated: true)
+            } else {
+                let x = self.sc.viewControllers[0] as! UINavigationController
+                x.pushViewController(vc, animated: true)
+            }
         }
     }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let action = UITableViewRowAction.init(style: .destructive, title: "REMOVE") { (_, indexPath) in
+            self.dataSource.deleteRating(at: indexPath.row)
+        }
+        return [action]
+    }
 }
+
+

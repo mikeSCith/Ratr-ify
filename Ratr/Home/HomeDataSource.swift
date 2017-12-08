@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 
-class HomeControllerDataSource: NSObject, UITableViewDataSource, HomeInteractorDelegate, HomeControllerDataSourceProtocol {
+class HomeDataSource: NSObject, UITableViewDataSource, HomeInteractorDelegate, HomeDataSourceProtocol {
 
     let cellIndentifier: String = "cell_indentifier"
     
@@ -20,8 +20,7 @@ class HomeControllerDataSource: NSObject, UITableViewDataSource, HomeInteractorD
         self.tableView.dataSource = self
         
         self.tableView.register(UINib(nibName: "HomeCell", bundle: nil), forCellReuseIdentifier: self.cellIndentifier)
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = 40
+        self.tableView.rowHeight = 234
     }
     
     convenience init(tableView: UITableView){
@@ -44,6 +43,10 @@ class HomeControllerDataSource: NSObject, UITableViewDataSource, HomeInteractorD
     
     public func rating(for index: Int) -> Rating {
         return homeInteractor.ratings[index]
+    }
+    
+    public func deleteRating(at index: Int) {
+        homeInteractor.deleteRatingData(at: index)
     }
     
     func contentDidChange() {

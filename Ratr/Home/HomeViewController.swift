@@ -2,22 +2,25 @@ import UIKit
 import AARatingBar
 import Kingfisher
 
-class HomeController: UIViewController {
+class HomeViewController: UIViewController {
     
-    var dataSource: HomeControllerDataSource!
-    var delegate: HomeControllerDelegate!
+    var dataSource: HomeDataSource!
+    var delegate: HomeDelegate!
+    
+    var detailsNavigation: UISplitViewController!
     
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func addNewApp(_ sender: UIBarButtonItem) {
-        let vc = AddAppController.newController()
+        let vc = AddAppViewController.newController()
         navigationController?.pushViewController(vc, animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataSource = HomeControllerDataSource(tableView: tableView)
-        delegate = HomeControllerDelegate(nc: navigationController!, dataSource: dataSource, tableView: tableView)
+        self.navigationController?.navigationItem.title = "Select"
+        dataSource = HomeDataSource(tableView: tableView)
+        delegate = HomeDelegate(dataSource: dataSource, tableView: tableView, sc: detailsNavigation)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -25,6 +28,3 @@ class HomeController: UIViewController {
         dataSource.loadData()
     }
 }
-
-
-    

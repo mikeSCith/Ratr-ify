@@ -10,6 +10,5 @@ target 'Ratr' do
   pod 'Kingfisher', '~> 4.0'
   pod 'Disk', '~> 0.3.2'
   pod 'SwiftyJSON'
-  pod 'AARatingBar'
-  # Pods fo r Ratr
+  # Pods for Ratr
 end

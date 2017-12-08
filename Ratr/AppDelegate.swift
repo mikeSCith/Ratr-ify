@@ -12,10 +12,23 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window!.rootViewController = buildSplitViewController()
+        self.window!.makeKeyAndVisible()
         return true
+    }
+    
+    func buildSplitViewController() -> PrimarySplitViewController {
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let homeViewController = mainStoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        let homeNavController = UINavigationController.init(rootViewController: homeViewController)
+        let splitViewController =  PrimarySplitViewController()
+        let secondNavigationController = UINavigationController()
+        homeViewController.detailsNavigation = splitViewController
+        splitViewController.viewControllers = [homeNavController,secondNavigationController]
+        return splitViewController
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -3,66 +3,52 @@ import UIKit
 class AppDetailsController: UITableViewController {
  
     var rating: Rating!
+    var dataSource: AppDetailsDataSource!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName: "DetailsCellSmall", bundle: nil), forHeaderFooterViewReuseIdentifier: "DetailsCellSmall")
-        tableView.register(UINib(nibName: "DetailsHeaderCell", bundle: nil), forHeaderFooterViewReuseIdentifier: "DetailsHeaderCell")
-        tableView.rowHeight = UITableViewAutomaticDimension
-        setHeader()
-        setFooter()
+        navigationItem.title = rating.title
+        dataSource = AppDetailsDataSource(tableView: tableView, rating: self.rating)
+        self.navigationController?.topViewController?.navigationItem.title = rating.title
+        setTableHeader()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        tableView.rowHeight = UITableViewAutomaticDimension
-    }
-
-    // MARK: - Table view data source
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        switch (indexPath.row) {
-        case 0:
-            return buildCell(from: "DetailsCellSmall", displays: "Version", and: rating.latestVersion, at: indexPath)
-        case 1:
-            return buildCell(from: "DetailsCellSmall", displays: "Rating", and: String(rating.overallAverageRating), at: indexPath)
-        case 2:
-            return buildCell(from: "DetailsCellSmall", displays: "Rating Count", and: String(rating.overallRatingCount), at: indexPath)
-        case 3:
-            return buildCell(from: "DetailsCellLarge", displays: "Release Notes", and: rating.releaseNotes, at: indexPath )
-        default:
-            return UITableViewCell()
-        }
+        super.viewDidAppear(animated)
+        self.navigationController?.topViewController?.navigationItem.titleView = nil
     }
     
-    private func setHeader() {
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        sizeHeaderToFit()
+    }
+    
+    private func sizeHeaderToFit() {
+        if let headerView = tableView.tableHeaderView {
+            
+            headerView.setNeedsLayout()
+            headerView.layoutIfNeeded()
+            
+            let minHeight = CGFloat(300.00)
+            let halfHeight = self.view.window!.frame.size.height / 2
+            let height = minHeight > halfHeight ? minHeight : halfHeight
+            var newFrame = headerView.frame
+            
+            if height != newFrame.size.height {
+                newFrame.size.height = height
+                headerView.frame = newFrame
+                tableView.tableHeaderView = headerView
+            }
+        }
+    }
+
+    
+    private func setTableHeader() {
         let header = Bundle.main.loadNibNamed("DetailsHeaderCell", owner: nil, options: nil)?.first! as! DetailsHeaderCell
         header.present(rating: rating)
         tableView.tableHeaderView = header
     }
-    
-    private func setFooter() {
-        let footer = Bundle.main.loadNibNamed("DetailsFooterCell", owner: nil, options: nil)?.first! as! DetailsFooterCell
-        tableView.tableFooterView = footer
-    }
  
-    private func buildCell(from identifier: String, displays key: String, and value: String, at indexPath: IndexPath) -> UITableViewCell {
-        switch (identifier) {
-        case "DetailsCellSmall":
-            let cell = Bundle.main.loadNibNamed("DetailsCellSmall", owner: nil, options: nil)?.first! as! DetailsCellSmall
-            cell.present(key: key, value: value)
-            return cell
-        case "DetailsCellLarge":
-            let cell = Bundle.main.loadNibNamed("DetailsCellLarge", owner: nil, options: nil)?.first! as! DetailsCellLarge
-            cell.present(key: key, value: value)
-            return cell
-        default:
-            return UITableViewCell()
-        }
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {return 4}
-
     static func newController(for rating: Rating) -> AppDetailsController {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let vc = storyboard.instantiateViewController(withIdentifier: "AppDetailsController") as! AppDetailsController
