@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,8 +17,8 @@
             <rect key="frame" x="0.0" y="0.0" width="399" height="535"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView autoresizesSubviews="NO" contentMode="redraw" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="7Tf-Xu-Ovh">
-                    <rect key="frame" x="25" y="75" width="399" height="450"/>
+                <stackView autoresizesSubviews="NO" contentMode="redraw" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7Tf-Xu-Ovh">
+                    <rect key="frame" x="25" y="40" width="399" height="485"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erV-sm-YQ3">
                             <rect key="frame" x="0.0" y="0.0" width="399" height="20.5"/>
@@ -26,7 +27,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzf-Pj-dWl">
-                            <rect key="frame" x="0.0" y="178.5" width="399" height="90"/>
+                            <rect key="frame" x="0.0" y="28.5" width="399" height="90"/>
                             <attributedString key="attributedText">
                                 <fragment content="☆☆☆☆☆">
                                     <attributes>
@@ -39,7 +40,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" text="review" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="1" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wQ0-lw-vrm">
-                            <rect key="frame" x="0.0" y="426" width="399" height="24"/>
+                            <rect key="frame" x="0.0" y="126.5" width="399" height="358.5"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -49,7 +50,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="7Tf-Xu-Ovh" firstAttribute="top" secondItem="foI-i2-lwc" secondAttribute="top" constant="75" id="5pC-fF-1qP"/>
+                <constraint firstItem="7Tf-Xu-Ovh" firstAttribute="top" secondItem="foI-i2-lwc" secondAttribute="top" constant="40" id="5pC-fF-1qP"/>
                 <constraint firstItem="7Tf-Xu-Ovh" firstAttribute="leading" secondItem="MwJ-dQ-OTY" secondAttribute="leading" constant="25" id="XSN-YV-q41"/>
                 <constraint firstItem="MwJ-dQ-OTY" firstAttribute="trailing" secondItem="7Tf-Xu-Ovh" secondAttribute="trailing" constant="25" id="iM8-Nw-iHu"/>
                 <constraint firstAttribute="bottom" secondItem="7Tf-Xu-Ovh" secondAttribute="bottom" constant="10" id="zTL-bw-35b"/>

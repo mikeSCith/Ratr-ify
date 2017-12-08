@@ -4,5 +4,5 @@
 *.perspectivev3
 *.xcuserstate
 Ratr.xcodeproj/
-Ratr.xcworkspace/
+Ratr.xcworkspace/xcuserdata
 Pods/
