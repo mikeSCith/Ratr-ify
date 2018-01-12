@@ -15,7 +15,7 @@ class RatingTabController: UITabBarController {
         let appDetailsController = AppDetailsController.newController(for: rating)
         appDetailsController.tabBarItem = UITabBarItem(title: "Rating", image: ratingImage, tag: 0)
         
-        appReviewsController = AppReviewsController.newController(for: reviews)
+        appReviewsController = AppReviewsController.newController(for: reviews, with: rating.appIconLarge)
         appReviewsController.tabBarItem = UITabBarItem(title: "Reviews", image: reviewImage, tag: 1)
         
         let viewControllerList = [appDetailsController, appReviewsController]

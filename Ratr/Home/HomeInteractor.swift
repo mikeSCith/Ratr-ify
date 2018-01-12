@@ -1,16 +1,15 @@
 import Foundation
 import Disk
 
-protocol HomeInteractorDelegate: NSObjectProtocol {
-    func contentDidChange()
-}
+class HomeInteractor: HomeViewInteracting {
 
-class HomeInteractor: HomeInteractorProtocol {
+    var presenter: HomePresenting?
+    var ratingClient: RatingClientProtocol?
     
     var ratings: [Rating] = [] {
         didSet {
-            delegate?.contentDidChange()
             try? Disk.save(ratings, to: .caches, as: "ratings.json")
+            presenter?.ratings = ratings
         }
     }
     
@@ -19,11 +18,22 @@ class HomeInteractor: HomeInteractorProtocol {
         self.ratings = savedRatings ?? []
     }
     
-    func deleteRatingData(at index: Int) {
+    func deleteRatingData(at indexPath: IndexPath) {
         var newRatings = ratings
-        newRatings.remove(at: index)
+        newRatings.remove(at: indexPath.row)
         ratings = newRatings
     }
     
-    weak var delegate: HomeInteractorDelegate?
+    func fetchReviews(
+        for rating: Rating,
+        with client: RatingClientProtocol = RatingClient()) {
+        
+        client.getReview(for: rating.id) { (reviews, error) in
+            if let reviews = reviews {
+                self.presenter?.successfulFetch(for: rating, with: reviews)
+            } else {
+                self.presenter?.errorFetch()
+            }
+        }
+    }
 }

@@ -9,6 +9,7 @@ class AppReviewsController: UIViewController {
     var positiveReviews: [Review]!
     var negativeReviews: [Review]!
     var reviews: [Review]!
+    var background: URL!
     var dataSource: AppReviewsDataSource!
     var delegate: AppReviewsDelegate!
     var sc: UISegmentedControl!
@@ -19,7 +20,7 @@ class AppReviewsController: UIViewController {
         super.viewDidLoad()
             
         dataSource = AppReviewsDataSource(tableView: tableView, reviews: reviews)
-        delegate = AppReviewsDelegate(tableView: tableView, reviews: reviews, nc: self.navigationController!)
+        delegate = AppReviewsDelegate(tableView: tableView, reviews: reviews, nc: self.navigationController!, background: self.background)
         
         let items = ["Positive", "Negative"]
         sc = UISegmentedControl(items: items)
@@ -47,13 +48,14 @@ class AppReviewsController: UIViewController {
         
     }
     
-    static func newController(for reviews: [Review]) -> AppReviewsController {
+    static func newController(for reviews: [Review], with background: URL) -> AppReviewsController {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let vc = storyboard.instantiateViewController(withIdentifier: "AppReviewsController") as! AppReviewsController
         let positiveReviews = reviews.filter { !(Double($0.rating)?.isLess(than: 2.5))! }
         let negativeReviews = reviews.filter { (Double($0.rating)?.isLess(than: 2.5))! }
         vc.positiveReviews = positiveReviews
         vc.negativeReviews = negativeReviews
+        vc.background = background
         vc.reviews = vc.positiveReviews
         return vc
     }

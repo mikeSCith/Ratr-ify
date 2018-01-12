@@ -1,9 +1,12 @@
 import Foundation
 import UIKit
+import Kingfisher
+
 
 class ReviewDetailsController: UITableViewController {
     
     var review: Review!
+    var background: URL!
     var dataSource: ReviewDetailsDataSource!
     
     override func viewDidLoad() {
@@ -12,12 +15,28 @@ class ReviewDetailsController: UITableViewController {
         setHeader()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
     private func setHeader() {
         let header = Bundle.main.loadNibNamed("ReviewDetailsHeaderCell", owner: nil, options: nil)?.first! as! ReviewDetailsHeaderCell
         header.present(for: review.rating, with: review.title, with: review.comment)
         tableView.tableHeaderView = header
+        setBackground()
     }
     
+    private func setBackground() {
+        var imageView: UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  UIViewContentMode.scaleToFill
+        imageView.clipsToBounds = true
+        imageView.kf.setImage(with: background)
+        imageView.center = tableView.tableHeaderView!.center
+        tableView.tableHeaderView!.addSubview(imageView)
+        self.tableView.tableHeaderView?.sendSubview(toBack: imageView)
+    }
+ 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         sizeHeaderToFit()
@@ -42,10 +61,11 @@ class ReviewDetailsController: UITableViewController {
         }
     }
     
-    static func newController(for review: Review) -> ReviewDetailsController {
+    static func newController(for review: Review, with background: URL) -> ReviewDetailsController {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let vc = storyboard.instantiateViewController(withIdentifier: "ReviewDetailsController") as! ReviewDetailsController
         vc.review = review
+        vc.background = background
         return vc
     }
 }

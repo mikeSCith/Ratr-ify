@@ -1,6 +1,5 @@
 import Foundation
 import UIKit
-import AARatingBar
 import Kingfisher
 
 class HomeCell: UITableViewCell {
@@ -44,7 +43,7 @@ class ReviewCell: UITableViewCell {
     @IBOutlet weak var valueLabel: UILabel!
     
     func present(review: Review) {
-        keyLabel.text = review.comment
+        keyLabel.text = review.title
         valueLabel.text = review.rating
     }
 }
@@ -70,7 +69,7 @@ class RatingCell: UIView {
             let emptyStarAttachment = NSTextAttachment()
             emptyStarAttachment.image = UIImage(named: "empty-star.png")
             let attachmentEmptyStarString = NSAttributedString(attachment: emptyStarAttachment)
-            for _ in stride(from: 0.0, to: 5.0 - stars, by: 1.0) {
+            for _ in stride(from: 0, to: 4.1 - stars, by: 1.0) {
                 ratingString.append(attachmentEmptyStarString)
             }
         }

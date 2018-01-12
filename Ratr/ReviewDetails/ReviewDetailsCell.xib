@@ -16,37 +16,38 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GmF-Ea-29r">
-                    <rect key="frame" x="10" y="17" width="150" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="150" id="bgr-aY-S6r"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jE-Pg-Tqy">
-                    <rect key="frame" x="215" y="17" width="150" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="150" id="4bj-qd-B38"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fn6-h9-GZb">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GmF-Ea-29r">
+                            <rect key="frame" x="0.0" y="0.0" width="28.5" height="55"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jE-Pg-Tqy">
+                            <rect key="frame" x="28.5" y="0.0" width="346.5" height="55"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="GmF-Ea-29r" firstAttribute="centerY" secondItem="RPz-mf-wLE" secondAttribute="centerY" id="Dka-2j-ZbQ"/>
-                <constraint firstItem="5jE-Pg-Tqy" firstAttribute="centerY" secondItem="RPz-mf-wLE" secondAttribute="centerY" id="EcW-AX-J1r"/>
-                <constraint firstAttribute="trailing" secondItem="5jE-Pg-Tqy" secondAttribute="trailing" constant="10" id="SRC-ZO-laq"/>
-                <constraint firstItem="GmF-Ea-29r" firstAttribute="leading" secondItem="RPz-mf-wLE" secondAttribute="leading" constant="10" id="dnL-1d-mPI"/>
+                <constraint firstItem="zT2-8d-guo" firstAttribute="trailing" secondItem="Fn6-h9-GZb" secondAttribute="trailing" id="2qn-Gs-BrS"/>
+                <constraint firstItem="Fn6-h9-GZb" firstAttribute="top" secondItem="zT2-8d-guo" secondAttribute="top" id="Hqj-xF-XYs"/>
+                <constraint firstItem="zT2-8d-guo" firstAttribute="bottom" secondItem="Fn6-h9-GZb" secondAttribute="bottom" id="V1m-H6-5si"/>
+                <constraint firstItem="Fn6-h9-GZb" firstAttribute="leading" secondItem="zT2-8d-guo" secondAttribute="leading" id="gnu-cn-ndc"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="zT2-8d-guo"/>
             <connections>
-                <outlet property="keyValue" destination="GmF-Ea-29r" id="pMM-dZ-Zvw"/>
-                <outlet property="labelValue" destination="5jE-Pg-Tqy" id="Eg1-hA-Kbd"/>
+                <outlet property="keyValue" destination="GmF-Ea-29r" id="819-wt-0Ic"/>
+                <outlet property="labelValue" destination="5jE-Pg-Tqy" id="5LJ-3z-koa"/>
             </connections>
             <point key="canvasLocation" x="37.5" y="-494.5"/>
         </view>

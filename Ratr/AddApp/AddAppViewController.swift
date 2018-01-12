@@ -1,20 +1,31 @@
 import Foundation
 import UIKit
 
-class AddAppViewController: UIViewController, AddAppInteractorDelegate {
+class AddAppViewController: UIViewController, UITextFieldDelegate, AddAppInteractorDelegate {
     
     var addAppInteractor = AddAppInteractor()
     
     @IBOutlet weak var addAppinput: UITextField!
 
     @IBAction func addAppButton(_ sender: Any) {
-        guard let text = addAppinput.text else {return}
-        addAppInteractor.setRatings(for: text) { if ($0 != nil) { self.handleError($0!) } }
+        submitNewApp()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addAppInteractor.delegate = self
+        self.addAppinput.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        submitNewApp()
+        return true
+    }
+    
+    func submitNewApp() {
+        guard let text = addAppinput.text else {return}
+        addAppInteractor.setRatings(for: text) { if ($0 != nil) { self.handleError($0!) } }
     }
     
     func newAppAdded() {

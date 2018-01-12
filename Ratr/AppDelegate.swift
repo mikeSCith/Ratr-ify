@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  Ratr
-//
-//  Created by Michael Smith on 08/11/17.
-//  Copyright © 2017 Soundcloud. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
@@ -15,20 +7,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window!.rootViewController = buildSplitViewController()
+        self.window!.rootViewController = HomeBuilder.build()
         self.window!.makeKeyAndVisible()
         return true
-    }
-    
-    func buildSplitViewController() -> PrimarySplitViewController {
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let homeViewController = mainStoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-        let homeNavController = UINavigationController.init(rootViewController: homeViewController)
-        let splitViewController =  PrimarySplitViewController()
-        let secondNavigationController = UINavigationController()
-        homeViewController.detailsNavigation = splitViewController
-        splitViewController.viewControllers = [homeNavController,secondNavigationController]
-        return splitViewController
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

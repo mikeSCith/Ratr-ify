@@ -13,7 +13,7 @@ class ReviewDetailsDataSource: NSObject, UITableViewDataSource {
         self.tableView.dataSource = self
     }
 
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {return 4}
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {return 3}
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -27,9 +27,6 @@ class ReviewDetailsDataSource: NSObject, UITableViewDataSource {
             cell.present(key: "Rating", value: review.rating)
             return cell
         case 2:
-            cell.present(key: "Title", value: review.title)
-            return cell
-        case 3:
             cell.present(key: "Version", value: review.appVersion)
             return cell
         default:
