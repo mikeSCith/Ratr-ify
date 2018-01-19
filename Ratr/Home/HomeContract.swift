@@ -7,7 +7,13 @@ protocol HomePresenting {
     
     var ratingsCount: Int { get }
     
+    var interactor: HomeViewInteracting? { get set }
+    
+    var view: HomeViewControlling? { get set }
+    
     func updateView()
+    
+    func buildCell(at indexPath: IndexPath, using cell: HomeCell)
         
     func cellSelected(at indexPath: IndexPath)
     
@@ -20,6 +26,10 @@ protocol HomePresenting {
 
 protocol HomeViewControlling {
     
+    var presenter: HomePresenting? { get set }
+    
+    var detailsNavigation: PrimarySplitViewController? { get set }
+    
     func reloadData()
     
     func addNewApp(_ sender: UIBarButtonItem)
@@ -28,6 +38,9 @@ protocol HomeViewControlling {
 }
 
 protocol HomeViewInteracting {
+    
+    var presenter: HomePresenting? { get set}
+    
     func loadRatingData()
 
     func fetchReviews(for rating: Rating, with client: RatingClientProtocol)

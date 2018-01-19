@@ -1,13 +1,13 @@
 import Foundation
 
 class HomePresenter: HomePresenting {
-    
-    var homeView: HomeViewControlling?
+
+    var view: HomeViewControlling?
     var interactor: HomeViewInteracting?
     
     var ratings: [Rating] = [] {
         didSet {
-            homeView?.reloadData()
+            view?.reloadData()
         }
     }
     
@@ -29,10 +29,14 @@ class HomePresenter: HomePresenting {
     }
     
     func successfulFetch(for rating: Rating, with reviews: [Review]) {
-        homeView?.pushReviews(for: rating, with: reviews)
+        view?.pushReviews(for: rating, with: reviews)
     }
     
     func errorFetch() {
         return
+    }
+    
+    func buildCell(at indexPath: IndexPath, using cell: HomeCell) {
+        cell.present(rating: ratings[indexPath.row])
     }
 }

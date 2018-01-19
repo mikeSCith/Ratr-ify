@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddAppViewController" customModule="Ratr" customModuleProvider="target">
+            <connections>
+                <outlet property="addAppinput" destination="n04-5e-8Lz" id="6e2-0u-7Q2"/>
+                <outlet property="view" destination="iN0-l3-epB" id="tgM-c5-iHp"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n04-5e-8Lz">
+                    <rect key="frame" x="50" y="318" width="275" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XjF-6W-e69">
+                    <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                    <color key="backgroundColor" red="1" green="0.33333333329999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="cgs-ob-QVK"/>
+                    </constraints>
+                    <state key="normal" title="Add App">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="addAppButton:" destination="-1" eventType="touchUpInside" id="Fl0-ZT-hdr"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add your App ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zu5-NX-zPy">
+                    <rect key="frame" x="100" y="277" width="174" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="n04-5e-8Lz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="3JJ-oA-sO3"/>
+                <constraint firstItem="XjF-6W-e69" firstAttribute="centerX" secondItem="n04-5e-8Lz" secondAttribute="centerX" id="5EY-BE-G0Q"/>
+                <constraint firstItem="n04-5e-8Lz" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="7Li-wE-hJg"/>
+                <constraint firstItem="zu5-NX-zPy" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="100" id="JQf-dG-IU4"/>
+                <constraint firstItem="zu5-NX-zPy" firstAttribute="centerX" secondItem="n04-5e-8Lz" secondAttribute="centerX" id="JWC-uv-7pP"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="n04-5e-8Lz" secondAttribute="trailing" constant="50" id="R7k-17-QBC"/>
+                <constraint firstItem="n04-5e-8Lz" firstAttribute="top" secondItem="zu5-NX-zPy" secondAttribute="bottom" constant="20" id="Zsb-Lc-4NO"/>
+                <constraint firstItem="n04-5e-8Lz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="aza-PO-srC"/>
+                <constraint firstAttribute="trailing" secondItem="XjF-6W-e69" secondAttribute="trailing" id="cHf-Ve-8yJ"/>
+                <constraint firstItem="XjF-6W-e69" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="qqq-hQ-Twf"/>
+                <constraint firstItem="XjF-6W-e69" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="vSX-Yh-1aa"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+</document>

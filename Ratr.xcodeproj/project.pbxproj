@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		1E07F7261FCDBB1500D7B280 /* ReviewSegmentedControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E07F7251FCDBB1500D7B280 /* ReviewSegmentedControl.xib */; };
+		1E0FC95B20095263004AFAD3 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0FC95A20095263004AFAD3 /* HomeCell.swift */; };
 		1E19701C1FBB244100C8D66A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E19701B1FBB244100C8D66A /* Assets.xcassets */; };
 		1E19701F1FBB28F500C8D66A /* AddAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E19701E1FBB28F500C8D66A /* AddAppViewController.swift */; };
 		1E1970251FBB657700C8D66A /* AddAppInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1970241FBB657700C8D66A /* AddAppInteractor.swift */; };
 		1E2185971FC2E5CD00D7E020 /* AppReviewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2185961FC2E5CD00D7E020 /* AppReviewsController.swift */; };
 		1E21859A1FC2EB2A00D7E020 /* ReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E2185991FC2EB2A00D7E020 /* ReviewCell.xib */; };
+		1E323D8420123B2B00D9C982 /* AddAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E323D8320123B2B00D9C982 /* AddAppViewController.xib */; };
+		1E323D862012419E00D9C982 /* AddAppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E323D852012419E00D9C982 /* AddAppPresenter.swift */; };
 		1E3861E81FC31C5100F938F8 /* ReviewDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3861E71FC31C5100F938F8 /* ReviewDetailsController.swift */; };
 		1E3861EA1FC31DF000F938F8 /* ReviewDetailsHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E3861E91FC31DF000F938F8 /* ReviewDetailsHeaderCell.xib */; };
 		1E3861EC1FC3246A00F938F8 /* ReviewDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E3861EB1FC3246A00F938F8 /* ReviewDetailsCell.xib */; };
@@ -23,13 +26,13 @@
 		1E3962A81FC5D12D00A04478 /* AppReviewsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3962A71FC5D12D00A04478 /* AppReviewsDataSource.swift */; };
 		1E3962AA1FC5D3BC00A04478 /* AppReviewsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3962A91FC5D3BC00A04478 /* AppReviewsDelegate.swift */; };
 		1E3962AC1FC5D61300A04478 /* ReviewDetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3962AB1FC5D61300A04478 /* ReviewDetailsDataSource.swift */; };
-		1E3962B01FC5D93000A04478 /* AddAppView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E3962AF1FC5D93000A04478 /* AddAppView.xib */; };
 		1E4C8BB61FC33E3500795775 /* HomeDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4C8BB51FC33E3500795775 /* HomeDataSourceTest.swift */; };
 		1E4C8BBD1FC3434500795775 /* HomeInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4C8BBC1FC3434500795775 /* HomeInteractorMock.swift */; };
 		1E51D4A31FC4665500C272B0 /* TestFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E51D4A21FC4665500C272B0 /* TestFixtures.swift */; };
 		1E55B0A61FC498C90004C36A /* MockNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E55B0A51FC498C90004C36A /* MockNavigationController.swift */; };
 		1E5D8CC11FBDCA1400268B56 /* AppDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5D8CC01FBDCA1400268B56 /* AppDetailsController.swift */; };
 		1E5D8CC31FBDCEF800268B56 /* DetailsHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5D8CC21FBDCEF800268B56 /* DetailsHeaderCell.xib */; };
+		1E6A88392012276600760054 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E6A88382012276600760054 /* HomeViewController.xib */; };
 		1E9736962008D247000AEE15 /* HomeContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9736952008D247000AEE15 /* HomeContract.swift */; };
 		1E9736982008D621000AEE15 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9736972008D621000AEE15 /* HomePresenter.swift */; };
 		1E97369A20090331000AEE15 /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E97369920090331000AEE15 /* HomeBuilder.swift */; };
@@ -76,11 +79,14 @@
 
 /* Begin PBXFileReference section */
 		1E07F7251FCDBB1500D7B280 /* ReviewSegmentedControl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewSegmentedControl.xib; sourceTree = "<group>"; };
+		1E0FC95A20095263004AFAD3 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		1E19701B1FBB244100C8D66A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E19701E1FBB28F500C8D66A /* AddAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAppViewController.swift; sourceTree = "<group>"; };
 		1E1970241FBB657700C8D66A /* AddAppInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAppInteractor.swift; sourceTree = "<group>"; };
 		1E2185961FC2E5CD00D7E020 /* AppReviewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReviewsController.swift; sourceTree = "<group>"; };
 		1E2185991FC2EB2A00D7E020 /* ReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewCell.xib; sourceTree = "<group>"; };
+		1E323D8320123B2B00D9C982 /* AddAppViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAppViewController.xib; sourceTree = "<group>"; };
+		1E323D852012419E00D9C982 /* AddAppPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAppPresenter.swift; sourceTree = "<group>"; };
 		1E3861E71FC31C5100F938F8 /* ReviewDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailsController.swift; sourceTree = "<group>"; };
 		1E3861E91FC31DF000F938F8 /* ReviewDetailsHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewDetailsHeaderCell.xib; sourceTree = "<group>"; };
 		1E3861EB1FC3246A00F938F8 /* ReviewDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewDetailsCell.xib; sourceTree = "<group>"; };
@@ -91,13 +97,13 @@
 		1E3962A71FC5D12D00A04478 /* AppReviewsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReviewsDataSource.swift; sourceTree = "<group>"; };
 		1E3962A91FC5D3BC00A04478 /* AppReviewsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReviewsDelegate.swift; sourceTree = "<group>"; };
 		1E3962AB1FC5D61300A04478 /* ReviewDetailsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailsDataSource.swift; sourceTree = "<group>"; };
-		1E3962AF1FC5D93000A04478 /* AddAppView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAppView.xib; sourceTree = "<group>"; };
 		1E4C8BB51FC33E3500795775 /* HomeDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSourceTest.swift; sourceTree = "<group>"; };
 		1E4C8BBC1FC3434500795775 /* HomeInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorMock.swift; sourceTree = "<group>"; };
 		1E51D4A21FC4665500C272B0 /* TestFixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFixtures.swift; sourceTree = "<group>"; };
 		1E55B0A51FC498C90004C36A /* MockNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNavigationController.swift; sourceTree = "<group>"; };
 		1E5D8CC01FBDCA1400268B56 /* AppDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsController.swift; sourceTree = "<group>"; };
 		1E5D8CC21FBDCEF800268B56 /* DetailsHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsHeaderCell.xib; sourceTree = "<group>"; };
+		1E6A88382012276600760054 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		1E9736952008D247000AEE15 /* HomeContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContract.swift; sourceTree = "<group>"; };
 		1E9736972008D621000AEE15 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		1E97369920090331000AEE15 /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
@@ -163,7 +169,8 @@
 			children = (
 				1E19701E1FBB28F500C8D66A /* AddAppViewController.swift */,
 				1E1970241FBB657700C8D66A /* AddAppInteractor.swift */,
-				1E3962AF1FC5D93000A04478 /* AddAppView.xib */,
+				1E323D8320123B2B00D9C982 /* AddAppViewController.xib */,
+				1E323D852012419E00D9C982 /* AddAppPresenter.swift */,
 			);
 			path = AddApp;
 			sourceTree = "<group>";
@@ -359,6 +366,8 @@
 				1EE9C53A1FBA06E000FD4410 /* HomeInteractor.swift */,
 				1E9736952008D247000AEE15 /* HomeContract.swift */,
 				1E97369920090331000AEE15 /* HomeBuilder.swift */,
+				1E0FC95A20095263004AFAD3 /* HomeCell.swift */,
+				1E6A88382012276600760054 /* HomeViewController.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -494,12 +503,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E323D8420123B2B00D9C982 /* AddAppViewController.xib in Resources */,
 				1E5D8CC31FBDCEF800268B56 /* DetailsHeaderCell.xib in Resources */,
 				1E21859A1FC2EB2A00D7E020 /* ReviewCell.xib in Resources */,
 				1E07F7261FCDBB1500D7B280 /* ReviewSegmentedControl.xib in Resources */,
 				1EE38FCF1FBEFA290065401F /* DetailsCellSmall.xib in Resources */,
-				1E3962B01FC5D93000A04478 /* AddAppView.xib in Resources */,
 				1EE9C5381FB9FBA500FD4410 /* HomeCell.xib in Resources */,
+				1E6A88392012276600760054 /* HomeViewController.xib in Resources */,
 				1E19701C1FBB244100C8D66A /* Assets.xcassets in Resources */,
 				1EE38FD11FBEFB900065401F /* DetailsCellLarge.xib in Resources */,
 				1EC111851FB33B04007BDA28 /* Main.storyboard in Resources */,
@@ -592,6 +602,7 @@
 				1EE38FD71FBF36A30065401F /* RatingTabController.swift in Sources */,
 				1E1970251FBB657700C8D66A /* AddAppInteractor.swift in Sources */,
 				1E97369A20090331000AEE15 /* HomeBuilder.swift in Sources */,
+				1E323D862012419E00D9C982 /* AddAppPresenter.swift in Sources */,
 				1E3861E81FC31C5100F938F8 /* ReviewDetailsController.swift in Sources */,
 				1E3962AA1FC5D3BC00A04478 /* AppReviewsDelegate.swift in Sources */,
 				1E9DA8061FD80899003FFDBE /* StringError.swift in Sources */,
@@ -603,6 +614,7 @@
 				1E5D8CC11FBDCA1400268B56 /* AppDetailsController.swift in Sources */,
 				1EE9C53B1FBA06E000FD4410 /* HomeInteractor.swift in Sources */,
 				1E9DA7FB1FD80841003FFDBE /* Review.swift in Sources */,
+				1E0FC95B20095263004AFAD3 /* HomeCell.swift in Sources */,
 				1E9DA8011FD8086E003FFDBE /* RatingClient.swift in Sources */,
 				1EC111801FB33B04007BDA28 /* AppDelegate.swift in Sources */,
 				1E9DA7FA1FD80841003FFDBE /* Rating.swift in Sources */,

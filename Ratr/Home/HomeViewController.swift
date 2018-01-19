@@ -1,5 +1,4 @@
 import UIKit
-import Kingfisher
 
 class HomeViewController: UIViewController {
     
@@ -7,29 +6,47 @@ class HomeViewController: UIViewController {
     
     var presenter: HomePresenting?
     
-    var detailsNavigation: UISplitViewController?
+    var detailsNavigation: PrimarySplitViewController?
     
-    let cellIndentifier: String = "cell_indentifier"
+    private let cellIndentifier: String = "cell_indentifier"
+    
+    init() {
+        super.init(nibName: String(describing: HomeViewController.self), bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationItem.title = "Select"
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(UINib(nibName: "HomeCell", bundle: nil), forCellReuseIdentifier: self.cellIndentifier)
-        tableView.rowHeight = 234
-        presenter?.updateView()
+        setupTable()
+        setupNav()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        presenter?.updateView()
     }
 }
 
 extension HomeViewController: HomeViewControlling {
+    
+    fileprivate func setupTable() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib(nibName: "HomeCell", bundle: nil), forCellReuseIdentifier: self.cellIndentifier)
+        tableView.rowHeight = 234
+    }
+    
+    fileprivate func setupNav() {
+        let addNewAppButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewApp))
+        navigationItem.rightBarButtonItem = addNewAppButton
+    }
 
-    func addNewApp(_ sender: UIBarButtonItem) {
-        let vc = AddAppViewController.newController()
+    @objc func addNewApp(_ sender: UIBarButtonItem) {
+        let vc = AddAppViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -47,17 +64,16 @@ extension HomeViewController: HomeViewControlling {
             let x = self.splitViewController?.viewControllers[0] as! UINavigationController
             x.pushViewController(viewController, animated: true)
         }
-        
     }
 }
 
 extension HomeViewController: UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIndentifier)! as! HomeCell
-        guard let rating = presenter?.ratings[indexPath.row] else { return UITableViewCell() }
-        cell.present(rating: rating)
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIndentifier) as? HomeCell {
+            presenter?.buildCell(at: indexPath, using: cell)
+            return cell
+        } else { return UITableViewCell() }
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -67,12 +83,12 @@ extension HomeViewController: UITableViewDataSource {
 
 extension HomeViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         presenter?.cellSelected(at: indexPath)
     }
     
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    public func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let action = UITableViewRowAction.init(style: .destructive, title: "REMOVE") { (_, indexPath) in
             self.presenter?.cellSelectedForDelete(at: indexPath)
         }

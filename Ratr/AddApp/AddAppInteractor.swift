@@ -1,46 +1,49 @@
 import Foundation
 import Disk
 
-protocol AddAppInteractorDelegate: NSObjectProtocol {
-    func newAppAdded()
+protocol AddAppInteracting {
+    var presenter: AddAppPresenting? { get set }
+    func saveRatings(with ratings: [Rating])
+    func setRatings(for id: String, on completion: @escaping ((Error?) -> Void))
 }
 
-class AddAppInteractor {
+class AddAppInteractor: AddAppInteracting {
+    
+    var presenter: AddAppPresenting?
     
     var ratingClient: RatingClientProtocol
     
     var savedRatings: [Rating] = []
     
-    var ratings: [Rating] = [] {
-        didSet {
-            delegate?.newAppAdded()
-            try? Disk.save(ratings, to: .caches, as: "ratings.json")
-        }
+    init(presenter: AddAppPresenting, ratingClient: RatingClientProtocol = RatingClient()) {
+        self.ratingClient = ratingClient
+        self.presenter = presenter
     }
     
-    init(_ ratingClient: RatingClientProtocol = RatingClient()) {
-        self.ratingClient = ratingClient
+    func saveRatings(with ratings: [Rating]) {
+        try? Disk.save(ratings, to: .caches, as: "ratings.json")
     }
 
     func setRatings(for id: String, on completion: @escaping ((Error?) -> Void)) {
-        savedRatings = (try? Disk.retrieve("ratings.json", from: .caches, as: [Rating].self)) ?? []
+        
         if id.isEmpty {
             completion("The ID is empty".error)
             return
         }
+        
+        savedRatings = (try? Disk.retrieve("ratings.json", from: .caches, as: [Rating].self)) ?? []
+        
         ratingClient.getRating(for: id) { (rating, error)  in
             if let error = error {
                 completion(error)
                 return
             } else {
-                self.ratings = self.savedRatings + [rating!]
+                self.presenter?.ratings = self.savedRatings + [rating!]
                 completion(nil)
                 return
             }
         }
     }
-    
-    weak var delegate: AddAppInteractorDelegate?
 }
 
 
