@@ -1,27 +1,22 @@
-import Foundation
 import Disk
 
 class HomeInteractor: HomeViewInteracting {
 
-    var presenter: HomePresenting?
-    var ratingClient: RatingClientProtocol?
-    
-    var ratings: [Rating] = [] {
-        didSet {
-            try? Disk.save(ratings, to: .caches, as: "ratings.json")
-            presenter?.ratings = ratings
-        }
-    }
+    weak var presenter: HomePresenting?
     
     func loadRatingData() {
         let savedRatings = try? Disk.retrieve("ratings.json", from: .caches, as: [Rating].self)
-        self.ratings = savedRatings ?? []
+        presenter?.ratings = savedRatings ?? []
     }
     
     func deleteRatingData(at indexPath: IndexPath) {
-        var newRatings = ratings
-        newRatings.remove(at: indexPath.row)
-        ratings = newRatings
+        let filteredRatings = presenter?.ratings
+            .enumerated()
+            .filter { $0.offset != indexPath.row }
+            .map { $0.element }
+        
+        try? Disk.save(filteredRatings, to: .caches, as: "ratings.json")
+        loadRatingData()
     }
     
     func fetchReviews(

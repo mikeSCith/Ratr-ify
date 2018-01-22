@@ -1,9 +1,9 @@
 import Foundation
 
 class HomePresenter: HomePresenting {
-
-    var view: HomeViewControlling?
+    
     var interactor: HomeViewInteracting?
+    weak var view: HomeViewControlling?
     
     var ratings: [Rating] = [] {
         didSet {

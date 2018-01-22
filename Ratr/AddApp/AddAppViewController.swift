@@ -1,9 +1,8 @@
 import Foundation
 import UIKit
 
-protocol AddAppViewControlling {
+protocol AddAppViewControlling: class {
     func presentAlertController(_ alertController: UIAlertController)
-    func submitNewApp()
     func returnToHome()
 }
 
@@ -19,10 +18,6 @@ class AddAppViewController: UIViewController {
     
     init() {
         super.init(nibName: "AddAppViewController", bundle: nil)
-        let newPresenter = AddAppPresenter()
-        self.presenter = newPresenter
-        self.presenter?.interactor = AddAppInteractor(presenter: newPresenter)
-        self.presenter?.view = self
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -31,7 +26,7 @@ class AddAppViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.addAppinput.delegate = self
+        addAppinput.delegate = self
     }
 }
 
@@ -47,16 +42,17 @@ extension AddAppViewController: UITextFieldDelegate {
 extension AddAppViewController: AddAppViewControlling {
     
     func presentAlertController(_ alertController: UIAlertController) {
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    
-    func submitNewApp() {
-        guard let text = addAppinput.text else {return}
-        presenter?.submitNewApp(with: text)
+        present(alertController, animated: true, completion: nil)
     }
     
     func returnToHome() {
         self.navigationController?.popViewController(animated: true)
+    }
+}
+
+private extension AddAppViewController {
+    private func submitNewApp() {
+        guard let text = addAppinput.text else {return}
+        presenter?.submitNewApp(with: text)
     }
 }

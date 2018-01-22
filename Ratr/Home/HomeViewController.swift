@@ -5,7 +5,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var presenter: HomePresenting?
-    
     var detailsNavigation: PrimarySplitViewController?
     
     private let cellIndentifier: String = "cell_indentifier"
@@ -32,21 +31,9 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: HomeViewControlling {
-    
-    fileprivate func setupTable() {
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(UINib(nibName: "HomeCell", bundle: nil), forCellReuseIdentifier: self.cellIndentifier)
-        tableView.rowHeight = 234
-    }
-    
-    fileprivate func setupNav() {
-        let addNewAppButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewApp))
-        navigationItem.rightBarButtonItem = addNewAppButton
-    }
 
     @objc func addNewApp(_ sender: UIBarButtonItem) {
-        let vc = AddAppViewController()
+        let vc = AddApp.build()
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -94,4 +81,20 @@ extension HomeViewController: UITableViewDelegate {
         }
         return [action]
     }
+}
+
+private extension HomeViewController {
+    
+    func setupTable() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib(nibName: "HomeCell", bundle: nil), forCellReuseIdentifier: self.cellIndentifier)
+        tableView.rowHeight = 234
+    }
+    
+    func setupNav() {
+        let addNewAppButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewApp))
+        navigationItem.rightBarButtonItem = addNewAppButton
+    }
+    
 }

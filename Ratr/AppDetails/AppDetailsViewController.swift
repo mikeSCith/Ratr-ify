@@ -1,14 +1,23 @@
 import UIKit
 
-class AppDetailsController: UITableViewController {
+class AppDetailsViewController: UIViewController {
  
-    var rating: Rating!
-    var dataSource: AppDetailsDataSource!
-
+    @IBOutlet weak var tableView: UITableView!
+    
+    var presenter: AppDetailsPresenting?
+    var rating: Rating
+    
+    init(for rating: Rating) {
+        self.rating = rating
+        super.init(nibName: "AppDetailsViewController", bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationItem.title = rating.title
-        dataSource = AppDetailsDataSource(tableView: tableView, rating: self.rating)
+        tableView.dataSource = self
         self.navigationController?.topViewController?.navigationItem.title = rating.title
         setTableHeader()
     }
@@ -16,6 +25,7 @@ class AppDetailsController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationController?.topViewController?.navigationItem.titleView = nil
+        navigationItem.title = rating.title
     }
     
     override func viewDidLayoutSubviews() {
@@ -23,7 +33,10 @@ class AppDetailsController: UITableViewController {
         sizeHeaderToFit()
     }
     
-    private func sizeHeaderToFit() {
+}
+
+private extension AppDetailsViewController {
+    func sizeHeaderToFit() {
         if let headerView = tableView.tableHeaderView {
             
             headerView.setNeedsLayout()
@@ -41,18 +54,19 @@ class AppDetailsController: UITableViewController {
             }
         }
     }
-
     
-    private func setTableHeader() {
+    func setTableHeader() {
         let header = Bundle.main.loadNibNamed("DetailsHeaderCell", owner: nil, options: nil)?.first! as! DetailsHeaderCell
         header.present(rating: rating)
         tableView.tableHeaderView = header
     }
- 
-    static func newController(for rating: Rating) -> AppDetailsController {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let vc = storyboard.instantiateViewController(withIdentifier: "AppDetailsController") as! AppDetailsController
-        vc.rating = rating
-        return vc
+}
+
+extension AppDetailsViewController: UITableViewDataSource {
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return presenter!.generateCell(for: rating, at: indexPath).cell
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return 4 }
 }

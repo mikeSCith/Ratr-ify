@@ -1,6 +1,6 @@
 import UIKit
 
-protocol AddAppPresenting {
+protocol AddAppPresenting: class {
     var interactor: AddAppInteracting? { get set }
     var view: AddAppViewControlling? { get set }
     var ratings: [Rating] { get set }
@@ -11,7 +11,7 @@ class AddAppPresenter: AddAppPresenting {
     
 
     var interactor: AddAppInteracting?
-    var view: AddAppViewControlling?
+    weak var view: AddAppViewControlling?
     
     var ratings: [Rating] = [] {
         didSet {

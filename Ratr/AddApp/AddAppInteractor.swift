@@ -1,7 +1,6 @@
-import Foundation
 import Disk
 
-protocol AddAppInteracting {
+protocol AddAppInteracting: class {
     var presenter: AddAppPresenting? { get set }
     func saveRatings(with ratings: [Rating])
     func setRatings(for id: String, on completion: @escaping ((Error?) -> Void))
@@ -9,19 +8,19 @@ protocol AddAppInteracting {
 
 class AddAppInteractor: AddAppInteracting {
     
-    var presenter: AddAppPresenting?
+    weak var presenter: AddAppPresenting?
+    private var ratingClient: RatingClientProtocol
+    private var savedRatings: [Rating] = []
+    private var ratingFile: String
     
-    var ratingClient: RatingClientProtocol
-    
-    var savedRatings: [Rating] = []
-    
-    init(presenter: AddAppPresenting, ratingClient: RatingClientProtocol = RatingClient()) {
+    init(ratingClient: RatingClientProtocol = RatingClient(),
+        ratingFile: String = "ratings.json") {
         self.ratingClient = ratingClient
-        self.presenter = presenter
+        self.ratingFile = ratingFile
     }
     
     func saveRatings(with ratings: [Rating]) {
-        try? Disk.save(ratings, to: .caches, as: "ratings.json")
+        try? Disk.save(ratings, to: .caches, as: ratingFile)
     }
 
     func setRatings(for id: String, on completion: @escaping ((Error?) -> Void)) {
@@ -31,7 +30,7 @@ class AddAppInteractor: AddAppInteracting {
             return
         }
         
-        savedRatings = (try? Disk.retrieve("ratings.json", from: .caches, as: [Rating].self)) ?? []
+        savedRatings = (try? Disk.retrieve(ratingFile, from: .caches, as: [Rating].self)) ?? []
         
         ratingClient.getRating(for: id) { (rating, error)  in
             if let error = error {

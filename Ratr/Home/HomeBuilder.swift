@@ -1,4 +1,3 @@
-import Foundation
 import UIKit
 
 class HomeBuilder {
@@ -10,10 +9,6 @@ class HomeBuilder {
         splitViewController: PrimarySplitViewController = PrimarySplitViewController(),
         secondNavigationController: UINavigationController = UINavigationController()
         ) -> PrimarySplitViewController {
-        
-        var presenter = presenter
-        var interactor = interactor
-        var view = view
         
         presenter.interactor = interactor
         presenter.view = view

@@ -2,6 +2,10 @@ import Foundation
 import UIKit
 import Kingfisher
 
+extension UITableViewCellStyle {
+    
+}
+
 class DetailsCellSmall: UITableViewCell {
     
     @IBOutlet weak var keyLabel: UILabel!

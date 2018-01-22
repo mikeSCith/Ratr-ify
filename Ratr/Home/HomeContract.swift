@@ -1,7 +1,6 @@
-import Foundation
 import UIKit
 
-protocol HomePresenting {
+protocol HomePresenting: class {
     
     var ratings: [Rating] { get set }
     
@@ -24,7 +23,7 @@ protocol HomePresenting {
     func errorFetch()
 }
 
-protocol HomeViewControlling {
+protocol HomeViewControlling: class {
     
     var presenter: HomePresenting? { get set }
     
@@ -37,7 +36,7 @@ protocol HomeViewControlling {
     func pushReviews(for rating: Rating, with Reviews: [Review])
 }
 
-protocol HomeViewInteracting {
+protocol HomeViewInteracting: class {
     
     var presenter: HomePresenting? { get set}
     

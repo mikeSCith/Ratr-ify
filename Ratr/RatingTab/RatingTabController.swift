@@ -12,7 +12,7 @@ class RatingTabController: UITabBarController {
         let ratingImage =  UIImage(named: "rating.png")
         let reviewImage = UIImage(named: "review.png")
         
-        let appDetailsController = AppDetailsController.newController(for: rating)
+        let appDetailsController = AppDetails.build(for: rating)
         appDetailsController.tabBarItem = UITabBarItem(title: "Rating", image: ratingImage, tag: 0)
         
         appReviewsController = AppReviewsController.newController(for: reviews, with: rating.appIconLarge)

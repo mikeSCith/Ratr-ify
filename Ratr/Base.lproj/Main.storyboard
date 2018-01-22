@@ -6,67 +6,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Add App View Controller-->
-        <scene sceneID="nv8-KQ-RcA">
-            <objects>
-                <viewController storyboardIdentifier="AddAppViewController" id="glb-lO-PaH" customClass="AddAppViewController" customModule="Ratr" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="wQg-rP-QUt"/>
-                        <viewControllerLayoutGuide type="bottom" id="c7x-eU-wGn"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="n6M-hB-8eP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add your App ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFt-PQ-UFp">
-                                <rect key="frame" x="120" y="240" width="174" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T0Z-LS-PRu">
-                                <rect key="frame" x="70" y="281" width="274" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ima-Mt-84W">
-                                <rect key="frame" x="0.0" y="686" width="414" height="50"/>
-                                <color key="backgroundColor" red="1" green="0.33333333333333331" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="csV-3F-kL3"/>
-                                </constraints>
-                                <state key="normal" title="Add App">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Ima-Mt-84W" firstAttribute="leading" secondItem="n6M-hB-8eP" secondAttribute="leading" id="5tC-qg-coC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="T0Z-LS-PRu" secondAttribute="trailing" constant="50" id="7BD-vP-aZa"/>
-                            <constraint firstItem="T0Z-LS-PRu" firstAttribute="top" secondItem="bFt-PQ-UFp" secondAttribute="bottom" constant="20" id="Gc7-Tt-JiZ"/>
-                            <constraint firstItem="bFt-PQ-UFp" firstAttribute="top" secondItem="wQg-rP-QUt" secondAttribute="bottom" constant="220" id="Goz-tH-Bci"/>
-                            <constraint firstItem="Ima-Mt-84W" firstAttribute="bottom" secondItem="c7x-eU-wGn" secondAttribute="top" id="KNi-fk-B1H"/>
-                            <constraint firstItem="bFt-PQ-UFp" firstAttribute="leading" secondItem="n6M-hB-8eP" secondAttribute="leadingMargin" constant="100" id="MrW-nk-b5J"/>
-                            <constraint firstItem="T0Z-LS-PRu" firstAttribute="leading" secondItem="n6M-hB-8eP" secondAttribute="leadingMargin" constant="50" id="Qmi-om-AzC"/>
-                            <constraint firstItem="Ima-Mt-84W" firstAttribute="centerX" secondItem="T0Z-LS-PRu" secondAttribute="centerX" id="WqF-bE-FNG"/>
-                            <constraint firstItem="bFt-PQ-UFp" firstAttribute="centerX" secondItem="n6M-hB-8eP" secondAttribute="centerX" id="xXB-sR-6l0"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ss6-6q-IZV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-955.07246376811599" y="37.5"/>
-        </scene>
-        <!--App Details Controller-->
+        <!--App Details View Controller-->
         <scene sceneID="ZNA-7o-ZrB">
             <objects>
-                <tableViewController storyboardIdentifier="AppDetailsController" id="1is-VP-p6m" customClass="AppDetailsController" customModule="Ratr" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AppDetailsViewController" id="1is-VP-p6m" customClass="AppDetailsViewController" customModule="Ratr" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="redraw" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="D8t-nZ-Z7z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
